@@ -34,26 +34,40 @@ CustomVarLibraryNamePlugin.prototype.apply = function(compiler) {
     }, []);
   }
 
-  compiler.plugin("compilation", function(compilation) {
-
-    var mainTemplate = compilation.mainTemplate;
-
-    mainTemplate.plugin('asset-path', function(path, data) {
-
-      if (replaceMap) {
+  function changeVarNames(path, data) {
+    if (replaceMap) {
         if (data.chunk && data.chunk.name) {
-          path = path.replace('[name]', data.chunk.name);
+            path = path.replace('[name]', data.chunk.name);
         }
 
         return replaceMap.reduce(function(prev, curr) {
-          return prev.replace(curr.replace, curr.with);
+            return prev.replace(curr.replace, curr.with);
         }, path);
-      } else {
-        return path.indexOf('root[') === 0 ? 'root["' + _this.options.name + '"]' : path;
-      }
+    } else {
+        return path.indexOf('root[') === 0
+            ? 'root["' + _this.options.name + '"]'
+            : path;
+    }
+  }
 
+  if(compiler.hooks){
+    // Webpack 4 
+    compiler.hooks.compilation.tap('CustomVarLibraryNamePlugin', function(
+      compilation
+    ) {
+        var mainTemplate = compilation.mainTemplate;
+        mainTemplate.hooks.assetPath.tap(
+            'CustomVarLibraryNamePluginAssetPath',
+            changeVarNames
+        );
     });
-  });
+  }else{
+    // Webpack 2-3
+    compiler.plugin("compilation", function(compilation) {
+      var mainTemplate = compilation.mainTemplate;
+      mainTemplate.plugin('asset-path', changeVarNames);
+    });
+  }
 };
 
 module.exports = CustomVarLibraryNamePlugin;
