@@ -55,5 +55,14 @@ var CustomVarLibraryNameAppendPlugin = require('webpack-custom-var-library-name-
 ...
 ```
 
+## Credit
+
++ Germán Lena
+  + Code base
+  + https://github.com/yagasoft/webpack-custom-var-library-name-append-plugin
++ Barthélémy Ledoux"
+  + Webpack 4 Update
+  + https://github.com/elevatebart/webpack-custom-var-library-name-plugin
+
 ---
 **Copyright &copy; by Ahmed el-Sawalhy ([Yagasoft](http://yagasoft.com))** -- _GPL v3 Licence_
