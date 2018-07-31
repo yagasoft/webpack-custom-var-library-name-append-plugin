@@ -1,4 +1,6 @@
-# CustomVarLibraryNamePlugin
+# CustomVarLibraryNameAppendPlugin
+### Version: 2.1.1
+---
 
 A WebPack plugin to allow to set a different module name to the var `libraryTarget` and the AMD/CommonJS when using `libraryTarget:'umd'`.
 The latest release adds the hability to change the file name and handle multiple bundle names.
@@ -52,3 +54,6 @@ var CustomVarLibraryNameAppendPlugin = require('webpack-custom-var-library-name-
     ],
 ...
 ```
+
+---
+**Copyright &copy; by Ahmed el-Sawalhy ([Yagasoft](http://yagasoft.com))** -- _GPL v3 Licence_
