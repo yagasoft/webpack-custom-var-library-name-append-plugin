@@ -1,20 +1,31 @@
 {
-  "name": "webpack-custom-var-library-name-plugin",
-  "version": "1.0.2",
-  "description": "",
-  "main": "index.js",
-  "scripts": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/glena/webpack-custom-var-library-name-plugin.git"
-  },
-  "author": "Germán Lena <german.lena@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/glena/webpack-custom-var-library-name-plugin/issues"
-  },
-  "peerDependencies": {
-    "webpack": "^4.16.0"
-  },
-  "homepage": "https://github.com/glena/webpack-custom-var-library-name-plugin#readme"
+	"name": "webpack-custom-var-library-name-append-plugin",
+	"version": "2.1.1",
+	"description": "",
+	"main": "index.js",
+	"scripts": {},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yagasoft/webpack-custom-var-library-name-append-plugin.git"
+	},
+	"author": "Germán Lena <german.lena@gmail.com>",
+	"contributors": [
+		{
+			"name": "Ahmed el-Sawalhy",
+			"email": "mail@yagasoft.com",
+			"url": "http://yagasoft.com"
+		},
+		{
+			"name": "Barthélémy Ledoux",
+			"email": "ledouxb@me.com"
+		}
+	],
+	"license": "GPL-3.0",
+	"bugs": {
+		"url": "https://github.com/yagasoft/webpack-custom-var-library-name-append-plugin/issues"
+	},
+	"peerDependencies": {
+		"webpack": "^4.16.0"
+	},
+	"homepage": "https://github.com/yagasoft/webpack-custom-var-library-name-append-plugin#readme"
 }
